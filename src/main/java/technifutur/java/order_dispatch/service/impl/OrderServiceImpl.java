@@ -7,6 +7,10 @@ import technifutur.java.order_dispatch.service.OrderService;
 
 import java.util.List;
 
+import technifutur.java.order_dispatch.model.entity.Order;
+import technifutur.java.order_dispatch.repository.OrderRepository;
+import technifutur.java.order_dispatch.service.OrderService;
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -35,4 +39,8 @@ public class OrderServiceImpl implements OrderService {
 
     }
 
+    public void delete(long id){
+        Order entity = this.orderRepository.getReferenceById(id);
+        this.orderRepository.delete(entity);
+    }
 }
