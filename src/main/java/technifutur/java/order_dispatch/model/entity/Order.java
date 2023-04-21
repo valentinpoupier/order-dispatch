@@ -25,8 +25,8 @@ public class Order {
     private OrderStatus status;
 
     @Column(name = "date_of_Order")
-    private LocalDate OrderAt;
-
+    private LocalDate orderAt;
+    
     @MapKeyColumn(name = "product_id")
     private Map<Long, Integer> products;
 
