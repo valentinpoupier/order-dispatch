@@ -12,7 +12,7 @@ import java.util.Map;
 @Getter
 @Setter
 public class Order {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
@@ -20,15 +20,15 @@ public class Order {
 
     @Column(name = "numero_order")
     private Integer numOrder;
-    
+
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
-    
+
     @Column(name = "date_of_Order")
     private LocalDate OrderAt;
-    
+
     @MapKeyColumn(name = "product_id")
     private Map<Long, Integer> products;
-    
+
 
 }
