@@ -3,6 +3,7 @@ package technifutur.java.order_dispatch.model.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import technifutur.java.order_dispatch.model.OrderStatus;
 
 import java.time.LocalDate;
 import java.util.Map;
@@ -16,6 +17,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
+
+    @Column(name = "numero_order")
+    private Integer numOrder;
     
     @Enumerated(EnumType.STRING)
     private OrderStatus status;
@@ -25,8 +29,6 @@ public class Order {
     
     @MapKeyColumn(name = "product_id")
     private Map<Long, Integer> products;
-    
-    
     
 
 }
