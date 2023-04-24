@@ -6,5 +6,4 @@ import technifutur.java.order_dispatch.model.entity.Order;
 public interface OrderRepository extends JpaRepository<Order, Long> {
 
 
-
 }
