@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class OrderNotCreated extends RuntimeException {
+public class EntityNotCreated extends RuntimeException {
     private String field;
     private String code;
     private String message;

@@ -5,9 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import technifutur.java.order_dispatch.model.OrderStatus;
 import technifutur.java.order_dispatch.model.entity.Order;
+import technifutur.java.order_dispatch.model.entity.ProductsInOrder;
 
 import java.time.LocalDate;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Data
 @Builder
@@ -29,10 +31,15 @@ public class OrderDTO {
                 .numOrder(entity.getNumOrder())
                 .orderAt(entity.getOrderAt())
                 .status(entity.getStatus())
-                .products(entity.getProducts())
+                .products(
+                        entity.getProductsInOrder().stream()
+                                .collect(
+                                        Collectors.toMap(
+                                                productsInOrder -> productsInOrder.getProduct().getProduct_id(),
+                                                ProductsInOrder::getQuantityToPrepare
+                                        )
+                                )
+                )
                 .build();
-
-        //Test
     }
-
 }

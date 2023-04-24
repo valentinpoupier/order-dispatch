@@ -3,8 +3,8 @@ package technifutur.java.order_dispatch.exception;
 import lombok.Getter;
 
 @Getter
-public class OrderNotFound extends RuntimeException {
-    public OrderNotFound(String message) {
+public class EntityNotFound extends RuntimeException {
+    public EntityNotFound(String message) {
         super(message);
     }
 }
