@@ -59,8 +59,6 @@ public class OrderServiceImpl implements OrderService {
 
     public void delete(long id) {
 
-    public void delete(long id){
-
         Order entity = this.orderRepository.getReferenceById(id);
         this.orderRepository.delete(entity);
 

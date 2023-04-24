@@ -17,12 +17,12 @@ public ProductServiceImpl(ProductRepository repository){
     @Override
     public long createNew(ProductDTO dto) {
        Product entity = new Product();
-       entity.setId(dto.getId());
+       entity.setProduct_id(dto.getId());
         entity.setName(dto.getName());
         entity.setPrice(dto.getPrice());
         entity.setStockQuantity(dto.getStockQuantity());
         repository.save(entity);
-        return entity.getId();
+        return entity.getProduct_id();
     }
 
     

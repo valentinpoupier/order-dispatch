@@ -45,10 +45,7 @@ public OrderController(OrderService orderService){
         this.orderService.update(order, id);
     }
 
-    @DeleteMapping("/delete/{id:[0-9]+}")
-    public void deleteOrder(@RequestBody @PathVariable long id) {
-        this.orderService.delete(id);
-    }
+
     @DeleteMapping("/delete/{id:[0-9]+}")
     public void deleteOrder(@RequestBody @PathVariable long id){
 
