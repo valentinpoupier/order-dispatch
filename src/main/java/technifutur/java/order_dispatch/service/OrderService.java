@@ -16,4 +16,5 @@ public interface OrderService {
 
     void create(OrderForm orderForm);
 
+    void update(OrderForm order, long id);
 }
