@@ -6,6 +6,7 @@ import lombok.Setter;
 import technifutur.java.order_dispatch.model.OrderStatus;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.Map;
 
 @Entity
@@ -26,9 +27,15 @@ public class Order {
 
     @Column(name = "date_of_Order")
     private LocalDate orderAt;
-    
+
+    @Column(name = "shipping_address")
+    private String shippingAddress;
+
+    @Column(name = "billing_address")
+    private String billingAddress;
+
     @MapKeyColumn(name = "product_id")
-    private Map<Long, Integer> products;
+    private Map<Long, Integer> products = new HashMap<>();
 
 
 }
