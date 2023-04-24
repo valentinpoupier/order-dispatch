@@ -6,7 +6,6 @@ import technifutur.java.order_dispatch.model.entity.Product;
 
 @Data
 @Builder
-
 public class ProductDTO {
     
     
@@ -23,7 +22,7 @@ public class ProductDTO {
             return null;
 
         return ProductDTO.builder()
-                .id(entity.getId())
+                .id(entity.getProduct_id())
                 .name(entity.getName())
                 .price(entity.getPrice())
                 .stockQuantity(entity.getStockQuantity())
