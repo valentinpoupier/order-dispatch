@@ -10,4 +10,6 @@ public interface OrderService {
 
     OrderDTO getOne(long id);
 
+    int getStockQuantity(String productId);
+
 }

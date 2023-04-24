@@ -8,3 +8,6 @@ spring:
         show-sql: true
         hibernate: 
             ddl-auto: create
+stock:
+    service:
+        url: http://localhost:8080/stock/products/{productId}
