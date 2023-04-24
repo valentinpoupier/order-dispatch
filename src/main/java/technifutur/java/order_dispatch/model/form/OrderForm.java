@@ -16,12 +16,6 @@ public class OrderForm {
         Order order = new Order();
         order.setShippingAddress(this.shippingAddress);
         order.setBillingAddress(this.billingAddress);
-        for (OrderItemForm orderItemForm : this.orderItems) {
-            order.getProducts().put(
-                    orderItemForm.getProductId(),
-                    orderItemForm.getQuantity()
-            );
-        }
 
         return order;
     }

@@ -6,9 +6,7 @@ import lombok.Setter;
 import technifutur.java.order_dispatch.model.OrderStatus;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 @Entity
@@ -35,9 +33,6 @@ public class Order {
 
     @Column(name = "billing_address")
     private String billingAddress;
-
-    @MapKeyColumn(name = "product_id")
-    private Map<Long, Integer> products = new HashMap<>();
 
     @OneToMany(mappedBy = "order")
     private Set<ProductsInOrder> productsInOrder = new HashSet<>();
