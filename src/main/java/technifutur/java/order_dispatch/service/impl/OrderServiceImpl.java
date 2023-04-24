@@ -11,6 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import technifutur.java.order_dispatch.model.entity.Order;
+
+
 @Service
 public class OrderServiceImpl implements OrderService {
 
@@ -19,6 +22,7 @@ public class OrderServiceImpl implements OrderService {
     private final RestTemplate restTemplate;
 
     private final String stockServiceUrl;
+
 
     public OrderServiceImpl(OrderRepository orderRepository, RestTemplate restTemplate, String stockServiceUrl) {
         this.orderRepository = orderRepository;
@@ -45,14 +49,27 @@ public class OrderServiceImpl implements OrderService {
 
     }
 
+
+    public void delete(long id){
+
+        Order entity = this.orderRepository.getReferenceById(id);
+        this.orderRepository.delete(entity);
+
+    }
+
+
     @Override
     public int getStockQuantity(String productId) {
+
         Map<String, String> params = new HashMap<>();
         params.put("productId", productId);
 
         StockResponse stockResponse = restTemplate.getForObject(stockServiceUrl, StockResponse.class, params);
 
         return stockResponse.getQuantity();
+
     }
+
+
 
 }
