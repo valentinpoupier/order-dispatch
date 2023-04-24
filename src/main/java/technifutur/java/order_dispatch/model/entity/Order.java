@@ -7,7 +7,9 @@ import technifutur.java.order_dispatch.model.OrderStatus;
 
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -37,5 +39,7 @@ public class Order {
     @MapKeyColumn(name = "product_id")
     private Map<Long, Integer> products = new HashMap<>();
 
+    @OneToMany(mappedBy = "order")
+    private Set<ProductsInOrder> productsInOrder = new HashSet<>();
 
 }

@@ -1,13 +1,6 @@
 package technifutur.java.order_dispatch.controller;
 
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import jakarta.ws.rs.PATCH;
 import org.springframework.web.bind.annotation.*;
 import technifutur.java.order_dispatch.model.dto.OrderDTO;
 import technifutur.java.order_dispatch.model.form.OrderForm;
@@ -39,15 +32,13 @@ public class OrderController {
 
     }
 
-    
+    @PatchMapping("/update/{id:[0-9]+}")
+    public void updateOrder(@RequestBody OrderForm order, @PathVariable long id) {
+        this.orderService.update(order, id);
+    }
 
     @DeleteMapping("/delete/{id:[0-9]+}")
     public void deleteOrder(@RequestBody @PathVariable long id) {
         this.orderService.delete(id);
-    }
-
-    @PostMapping("/create")
-    public void createOrder(@RequestBody OrderForm orderForm) {
-        this.orderService.create(orderForm);
     }
 }
