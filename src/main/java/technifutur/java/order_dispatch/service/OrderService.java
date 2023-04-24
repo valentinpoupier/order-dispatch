@@ -12,7 +12,7 @@ public interface OrderService {
     OrderDTO getOne(long id);
 
 
-    int getStockQuantity(String productId);
+//    int getStockQuantity(String productId);
 
 
     void delete(long id);

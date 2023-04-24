@@ -65,17 +65,17 @@ public class OrderServiceImpl implements OrderService {
     }
 
 
-    @Override
-    public int getStockQuantity(String productId) {
-
-        Map<String, String> params = new HashMap<>();
-        params.put("productId", productId);
-
-        StockResponse stockResponse = restTemplate.getForObject(stockServiceUrl, StockResponse.class, params);
-
-        return stockResponse.getQuantity();
-
-    }
+//    @Override
+//    public int getStockQuantity(String productId) {
+//
+//        Map<String, String> params = new HashMap<>();
+//        params.put("productId", productId);
+//
+//        StockResponse stockResponse = restTemplate.getForObject(stockServiceUrl, StockResponse.class, params);
+//
+//        return stockResponse.getQuantity();
+//
+//    }
 
 
 

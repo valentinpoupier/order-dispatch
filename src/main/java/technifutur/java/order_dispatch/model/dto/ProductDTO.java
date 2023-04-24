@@ -3,7 +3,6 @@ package technifutur.java.order_dispatch.model.dto;
 import lombok.Builder;
 import lombok.Data;
 import technifutur.java.order_dispatch.model.entity.Product;
-import technifutur.java.order_dispatch.model.entity.StockResponse;
 
 @Data
 @Builder
