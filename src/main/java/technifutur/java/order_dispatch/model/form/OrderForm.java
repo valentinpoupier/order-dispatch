@@ -8,11 +8,6 @@ import java.util.List;
 @Data
 public class OrderForm {
     private List<OrderItemForm> orderItems;
-    /*
-    adresse livraison
-    adresse facturation
-    authentification utilisateur par token ?
-     */
     private String shippingAddress;
     private String billingAddress;
     private String User;
